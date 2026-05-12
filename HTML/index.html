@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anfasa Umar | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Vertical Sticky Social Bar -->
+    <div class="sticky-socials">
+      <a
+        href="https://www.linkedin.com/in/anfasa-umar-b21893341?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        target="_blank"
+        class="s-link linkedin"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a
+        href="https://github.com/anfasaumar"
+        target="_blank"
+        class="s-link github"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/anfsumr?igsh=Y3h6YTVyZHdsamk2"
+        target="_blank"
+        class="s-link instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a
+        href="https://wa.me/6289637434050"
+        target="_blank"
+        class="s-link whatsapp"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <header>
+      <nav>
+        <div class="brand">ANFASA<span>UMAR</span></div>
+
+        <!-- Hamburger Menu untuk Mobile -->
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-item">Home</a></li>
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#topology" class="nav-item">Skills</a></li>
+          <li><a href="#projects" class="nav-item">Projects</a></li>
+          <li><a href="#certifications" class="nav-item">Certificates</a></li>
+          <li><a href="#contact" class="nav-item btn-connect">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section: Fokus pada Network Flow -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <span class="sub-title">Network Engineer & Frontend Engineer</span>
+        <h1>Innovating Through <span>Strategic Technology.</span></h1>
+        <p>
+          Mengoptimalkan performa web dan keamanan infrastruktur melalui
+          pendekatan Full-Stack yang scalable dan teruji.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-outline">Let's Talk</a>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Preview Universal -->
+    <div id="previewModal" class="modal-preview">
+      <span class="close-preview">&times;</span>
+      <div class="preview-content-wrapper">
+        <img id="previewImage" src="" alt="Preview" />
+        <p id="previewCaption"></p>
+      </div>
+    </div>
+
+    <!-- About Section: Professional Grid -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="profile-grid">
+          <div class="profile-img">
+            <img src="/foto_saya/foto gw .jpeg" alt="Muhammad Anfasa Umar" />
+            <div class="status-indicator">
+              <span class="ping-wave"></span>
+              Available for Projects
+            </div>
+          </div>
+          <div class="profile-info">
+            <h2>Muhammad Anfasa Umar</h2>
+            <h3>Network Engineer & Informatics Student</h3>
+            <p>
+              Mahasiswa Teknik Informatika di
+              <strong>STT Terpadu Nurul Fikri</strong> dengan spesialisasi
+              sistem infrastruktur jaringan. Berpengalaman dalam mengelola aspek
+              teknis dan strategis di organisasi serta proyek bisnis.
+            </p>
+
+            <div class="stats-row">
+              <div class="stat-box">
+                <strong>Project Officer</strong>
+                <span>Debat Rakyat Kampus 2025</span>
+              </div>
+              <div class="stat-box">
+                <strong>Kepala Departemen Kastrat</strong>
+                <span>Badan Eksekutif Mahasiswa STT-NF 2026</span>
+              </div>
+              <div class="stat-box">
+                <strong>Intern-IT Support</strong>
+                <span>Ex-PT.PLN Persero Pusdiklat Museum Listrik</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise" class="skills-section">
+      <h2 class="section-heading">Core Expertise Stack</h2>
+      <div class="topology-grid">
+        <div class="node">
+          <i class="fas fa-tower-broadcast"></i>
+          <h4>Network Installation & Maintenance</h4>
+          <p>
+            Ahli dalam perancangan, instalasi, dan perawatan jaringan internet
+            (Indoor & Outdoor) dengan stabilitas tinggi.
+          </p>
+        </div>
+
+        <div class="node">
+          <i class="fas fa-code"></i>
+          <h4>Frontend Engineering & UI/UX</h4>
+          <p>
+            Membangun antarmuka web yang modern dan responsif, berorientasi pada
+            kebutuhan klien untuk pengalaman pengguna yang optimal.
+          </p>
+        </div>
+
+        <div class="node">
+          <i class="fas fa-tools"></i>
+          <h4>Hardware Specialist & Repair</h4>
+          <p>
+            Layanan teknis profesional untuk perbaikan dan pemeliharaan Laptop,
+            PC, Smartphone, hingga perangkat Printer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="soft-skills" class="soft-skills-section">
+      <h2 class="section-heading">Professional Soft Skills</h2>
+      <div class="soft-skills-container">
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <h3>Strategic Leadership</h3>
+          <p>
+            Berpengalaman memimpin tim dalam organisasi kampus (BEM) dan
+            manajemen proyek teknologi sebagai CTO.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Client-Centric Communication</h3>
+          <p>
+            Mampu menerjemahkan kebutuhan teknis klien menjadi solusi visual
+            (UI/UX) yang fungsional dan memuaskan.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Analytical Problem Solving</h3>
+          <p>
+            Analisis cepat dan tepat dalam menangani troubleshoot hardware
+            maupun investigasi keamanan siber.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3>Project Management</h3>
+          <p>
+            Terbiasa mengelola *timeline* acara besar (seperti DERAS) dan
+            memastikan *delivery* proyek tepat waktu.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-heading">Featured Deployments</h2>
+        <div class="project-grid">
+         <div class="project-card" data-category="infrastructure">
+    <div class="project-img-wrapper">
+        <img src="/project/EdLink.png" alt="EdLink Integration System" />
+        <div class="project-overlay">
+            <div class="project-tags">
+                <span>Frontend</span>
+                <span>Figma</span>
+                <span>Web Developer</span>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>EdLink Management System</h3>
+        <p>
+            Optimasi dan integrasi platform pembelajaran digital untuk efisiensi manajemen data akademik dan interaksi mahasiswa yang lebih responsif.
+        </p>
+        <a href="#" class="view-detail">View Details <i class="fas fa-arrow-right"></i></a>
+    </div>
+</div>
+
+         <div class="project-card" data-category="frontend">
+    <div class="project-img-wrapper">
+        <img src="/project/MLEB.png" alt="Museum Listrik Energi Baru" />
+        <div class="project-overlay">
+            <div class="project-tags">
+                <span>Tailwind CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive Design</span>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>Museum Listrik & Energi Baru Interface</h3>
+        <p>
+            Pengembangan antarmuka website informatif untuk PT PLN (Persero) menggunakan Tailwind CSS guna memastikan performa yang cepat dan tampilan yang adaptif di berbagai perangkat.
+        </p>
+        <a href="#" class="view-detail">
+            View Live Site <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="/project/Autopsy.png" alt="Autopsy" />
+              <div class="project-overlay">
+                <div class="project-tags">
+                  <span>Forensics</span>
+                  <span>Autopsy</span>
+                  <span>Hacking</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Digital Forensics Investigation</h3>
+              <p>
+                Analisis bukti digital menggunakan FTK Imager dan Autopsy untuk
+                investigasi File Yang sengaja di hapus.
+              </p>
+              <a href="#" class="view-detail"
+                >View Report <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="network">
+    <div class="project-img-wrapper">
+        <img src="/project/VKJ.png" alt="Virtualisasi Keamanan Jaringan" />
+        <div class="project-overlay">
+            <div class="project-tags">
+                <span>MikroTik CHR</span>
+                <span>Ubuntu Server</span>
+                <span>Virtualization</span>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>Network Security Virtualization</h3>
+        <p>
+            Membangun lingkungan simulasi jaringan aman menggunakan VirtualBox dan MikroTik CHR untuk pengujian firewall, manajemen bandwidth, dan segmentasi jaringan berbasis Ubuntu Server.
+        </p>
+        <a href="#" class="view-detail">
+            View Topology <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="certs">
+      <h2 class="section-heading">Professional Credentials</h2>
+
+      <div id="certModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgPreview" />
+        <div id="caption"></div>
+      </div>
+
+      <!-- Filter (Opsional jika sertifikat sudah sangat banyak) -->
+      <div class="cert-filter">
+        <button class="filter-btn active" onclick="filterCerts('all')">
+          All
+        </button>
+        <button class="filter-btn" onclick="filterCerts('Sertifikat')">
+          Sertifikat
+        </button>
+        <button class="filter-btn" onclick="filterCerts('Sertifikasi')">
+          Sertifikasi
+        </button>
+      </div>
+
+      <div class="cert-grid">
+        <!-- Sertifikat 1 (Professional) -->
+        <div
+          class="cert-card Sertifikat"
+          onclick="
+            openModal(
+              '/sertifikat/MUHAMMAD ANFASA UMAR (1) (1).png',
+              'Project Officer Debat Rakyat Kampus 2025',
+            )
+          "
+        >
+          <div class="cert-img-container">
+            <img
+              src="/sertifikat/MUHAMMAD ANFASA UMAR (1) (1).png"
+              alt="Sertifikat Project Officer DERAS"
+            />
+          </div>
+          <div class="cert-info">
+            <h4>Project Officer DERAS 2025</h4>
+            <span>BEM STT Terpadu Nurul Fikri</span>
+            <p class="cert-desc">
+              Memimpin perencanaan dan eksekusi acara debat skala kampus,
+              mengelola tim lintas divisi, dan memastikan keberlangsungan acara
+              secara sistematis.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sertifikat 2 (Course) -->
+        <div
+          class="cert-card Sertifikasi"
+          onclick="
+            openModal(
+              '/sertifikat/Sertifikat.K3L_page-0001.jpg',
+              'Fullstack Web Development',
+            )
+          "
+        >
+          <div class="cert-img-container">
+            <img
+              src="/sertifikat/Sertifikat.K3L_page-0001.jpg"
+              alt="Sertifikat K3L"
+            />
+          </div>
+          <div class="cert-info">
+            <h4>Kesehatan & Keselamatan Kerja (K3L)</h4>
+            <span>GeoSafety Indonesia</span>
+            <p class="cert-desc">
+              Sertifikasi kompetensi dalam menerapkan standar keselamatan kerja
+              dan pengelolaan lingkungan di lingkungan profesional.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="cert-card Sertifikat"
+          onclick="
+            openModal(
+              '/sertifikat/Sertifikat_magang.jpg',
+              'Internship Completion - PT PLN (Persero)',
+            )
+          "
+        >
+          <div class="cert-img-container">
+            <img
+              src="/sertifikat/Sertifikat_magang.jpg"
+              alt="Sertifikat Magang PLN"
+            />
+          </div>
+          <div class="cert-info">
+            <h4>IT Support & Frontend Developer</h4>
+            <span>PT PLN (Persero) Pusdiklat</span>
+            <p class="cert-desc">
+              Berhasil menyelesaikan program magang selama 2 bulan dengan fokus
+              pada pemeliharaan sistem IT dan pengembangan antarmuka web di
+              Museum Listrik dan Energi Baru.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="cert-card Sertifikat"
+          onclick="
+            openModal(
+              '/sertifikat/Juara 3 Esai - M. Anfasa.png',
+              'Juara 3 Lomba Penulisan Jurnal Ilmiah',
+            )
+          "
+        >
+          <div class="cert-img-container">
+            <img
+              src="/sertifikat/Juara 3 Esai - M. Anfasa.png"
+              alt="Sertifikat Juara 3 Esai"
+            />
+          </div>
+          <div class="cert-info">
+            <h4>Juara 3 Penulisan Jurnal Ilmiah</h4>
+            <span>Kompetisi Penulisan Jurnal Ilmiah EHA Institute</span>
+            <p class="cert-desc">
+              Menganalisis fenomena sosial melalui karya ilmiah berjudul
+              "Transformasi Pola Makan Gen Z:Meningkatkan Konsumsi Real Food
+              Sebagai Upaya Mencegah Penyakit Degeneratif", menonjolkan
+              kemampuan riset data dan penulisan analitis.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="cert-card sertifikat"
+          onclick="
+            openModal(
+              '/sertifikat/Anfasa Umar.png',
+              'Kontribusi BEM Mengabdi - Pengabdian Masyarakat',
+            )
+          "
+        >
+          <div class="cert-img-container">
+            <img
+              src="/sertifikat/Anfasa Umar.png"
+              alt="Sertifikat BEM Mengabdi"
+            />
+          </div>
+          <div class="cert-info">
+            <h4>Kontributor BEM Mengabdi</h4>
+            <span>BEM STT Terpadu Nurul Fikri</span>
+            <p class="cert-desc">
+              Berdedikasi dalam program pengabdian masyarakat untuk memberikan
+              dampak positif langsung melalui implementasi ilmu dan bantuan
+              sosial di lingkungan masyarakat.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="cert-card sertifikat"
+          onclick="
+            openModal(
+              '/sertifikat/UMAR.png',
+              'Panitia Pelantikan Ketua Unit Kegiatan Mahasiswa',
+            )
+          "
+        >
+          <div class="cert-img-container">
+            <img
+              src="/sertifikat/UMAR.png"
+              alt="Sertifikat Panitia Pelantikan"
+            />
+          </div>
+          <div class="cert-info">
+            <h4>Panitia Pelantikan Ketua UKM</h4>
+            <span>STT Terpadu Nurul Fikri</span>
+            <p class="cert-desc">
+              Bertanggung jawab dalam koordinasi teknis dan pelaksanaan upacara
+              pelantikan formal pemimpin baru organisasi mahasiswa di lingkungan
+              kampus.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tambahkan sertifikat lainnya di sini dengan pola yang sama -->
+      </div>
+    </section>
+
+    <!-- Floating Download CV Button -->
+  <div class="floating-cv">
+    <a href="cv.jpg" download="cv.jpg" class="cv-btn">
+        <i class="fas fa-file-download"></i>
+        <span>Download CV</span>
+    </a>
+</div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-heading">Connect to Gateway</h2>
+        <div class="contact-grid">
+          <!-- Info Kontak -->
+          <div class="contact-info">
+            <h3>Let's Collaborate</h3>
+            <p>
+              Terbuka untuk diskusi mengenai infrastruktur jaringan, keamanan
+              sistem, atau peluang kolaborasi lainnya.
+            </p>
+
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>anfasaumar01@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fab fa-linkedin"></i>
+              <span>linkedin.com/in/anfasaumar</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Depok, Indonesia</span>
+            </div>
+          </div>
+
+          <!-- Formulir Kontak -->
+          <form action="https://formspree.io/f/mrejredn" method="POST" class="contact-form">
+    
+    <div class="form-group">
+        <input type="text" name="visitor_name" placeholder="Your Name" required>
+    </div>
+
+    <div class="form-group">
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+    </div>
+
+    <div class="form-group">
+        <textarea name="message" placeholder="Message Protocol..." rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">
+        Send Message <i class="fas fa-paper-plane"></i>
+    </button>
+
+</form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Pop-up (Tetap di bagian bawah body) -->
+    <div id="certModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-layout">
+        <img class="modal-content" id="imgModal" />
+        <div id="caption" class="modal-caption"></div>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <div class="footer-top">
+        <div class="footer-container">
+          <!-- Kolom 1: Branding & Slogan -->
+          <div class="footer-brand">
+            <div class="logo">ANFASA<span>UMAR</span></div>
+            <p>
+              Architecting secure and resilient network infrastructures.
+              Bridging connectivity with precision.
+            </p>
+            <div class="system-uptime">
+              <span class="status-dot"></span> System Uptime: 99.9%
+            </div>
+          </div>
+
+          <!-- Kolom 2: Quick Links -->
+          <div class="footer-links-grid">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">Profile</a></li>
+              <li><a href="#topology">Skills</a></li>
+              <li><a href="#projects">Deployments</a></li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Contact & Office -->
+          <div class="footer-contact">
+            <h4>Contact Protocol</h4>
+            <p><i class="fas fa-envelope"></i> anfasaumar01@gmail.com</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Depok, West Java, Indonesia
+            </p>
+            <div class="footer-socials">
+              <a
+                href="https://www.linkedin.com/in/anfasa-umar-b21893341?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank"
+                class="s-link linkedin"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://github.com/anfasaumar"
+                target="_blank"
+                class="s-link github"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/anfsumr?igsh=Y3h6YTVyZHdsamk2"
+                target="_blank"
+                class="s-link instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://wa.me/6289637434050"
+                target="_blank"
+                class="s-link whatsapp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom: Copyright & Meta -->
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <p>&copy; 2026 Muhammad Anfasa Umar. All Rights Reserved.</p>
+          <p class="tech-stack-info">Built with HTML5, CSS3, & Vanilla JS</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
