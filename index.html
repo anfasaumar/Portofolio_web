@@ -1,88 +1,81 @@
 <!doctype html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anfasa Umar | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Vertical Sticky Social Bar -->
-    <div class="sticky-socials">
-      <a href="https://www.linkedin.com/in/anfasa-umar-b21893341" target="_blank" class="s-link linkedin">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://github.com/anfasaumar" target="_blank" class="s-link github">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.instagram.com/anfsumr" target="_blank" class="s-link instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/6289637434050" target="_blank" class="s-link whatsapp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-    </div>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muhammad Anfasa Umar - Network Engineer & Frontend Engineer Portfolio" />
+  <title>Anfasa Umar | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <header>
-      <nav>
-        <div class="brand">ANFASA<span>UMAR</span></div>
-        <div class="menu-toggle" id="mobile-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#home" class="nav-item">Home</a></li>
-          <li><a href="#about" class="nav-item">About</a></li>
-          <li><a href="#expertise" class="nav-item">Skills</a></li>
-          <li><a href="#projects" class="nav-item">Projects</a></li>
-          <li><a href="#certifications" class="nav-item">Certificates</a></li>
-          <li><a href="#contact" class="nav-item btn-connect">Contact</a></li>
-          <!-- Theme Toggle Button -->
-          <li class="theme-toggle">
-            <button id="themeToggle" class="theme-btn" title="Toggle Theme">
-              <i class="fas fa-sun" id="sunIcon"></i>
-              <i class="fas fa-moon" id="moonIcon" style="display: none;"></i>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Vertical Sticky Social Bar -->
+  <aside class="sticky-socials" aria-label="Social Media Links">
+    <a href="https://www.linkedin.com/in/anfasa-umar-b21893341" target="_blank" rel="noopener" class="s-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/anfasaumar" target="_blank" rel="noopener" class="s-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/anfsumr" target="_blank" rel="noopener" class="s-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/6289637434050" target="_blank" rel="noopener" class="s-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </aside>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero reveal-init">
-      <div class="overlay"></div>
-      <div class="hero-content">
-        <span class="sub-title">Network Engineer & Frontend Engineer</span>
-        <h1>Innovating Through <span id="typewriter"></span></h1>
-        <p>Mengoptimalkan performa web dan keamanan infrastruktur melalui pendekatan Full-Stack yang scalable dan teruji.</p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn-primary">View My Work</a>
-          <a href="#contact" class="btn-outline">Let's Talk</a>
-        </div>
-      </div>
-    </section>
+  <!-- Navigation -->
+  <header>
+    <nav id="navbar" aria-label="Main Navigation">
+      <a href="#home" class="brand">ANFASA<span>UMAR</span></a>
+      <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#home" class="nav-item">Home</a></li>
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#expertise" class="nav-item">Skills</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#certifications" class="nav-item">Certificates</a></li>
+        <li><a href="#contact" class="nav-item btn-connect">Contact</a></li>
+        <li>
+          <button id="themeToggle" class="theme-btn" aria-label="Toggle theme" title="Toggle Theme">
+            <i class="fas fa-sun" id="sunIcon" aria-hidden="true"></i>
+            <i class="fas fa-moon" id="moonIcon" aria-hidden="true"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Modal Preview Universal -->
-    <div id="previewModal" class="modal-preview">
-      <span class="close-preview">&times;</span>
-      <div class="preview-content-wrapper">
-        <img id="previewImage" src="" alt="Preview" />
-        <p id="previewCaption"></p>
+  <!-- Hero Section -->
+  <section id="home" class="hero reveal-init">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="sub-title">Network Engineer & Frontend Engineer</span>
+      <h1>Innovating Through <span id="typewriter" aria-live="polite"></span><span class="cursor" aria-hidden="true">|</span></h1>
+      <p>Mengoptimalkan performa web dan keamanan infrastruktur melalui pendekatan Full-Stack yang scalable dan teruji.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-outline">Let's Talk</a>
       </div>
     </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="about container reveal-init" style="padding-top: 80px;">
+  <!-- Image Preview Modal -->
+  <div id="previewModal" class="modal" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <button class="close-modal" aria-label="Close preview">&times;</button>
+    <div class="modal-inner">
+      <img id="previewImage" src="" alt="" />
+      <p id="previewCaption" class="modal-caption"></p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="about section-pad reveal-init">
+    <div class="container">
       <div class="profile-grid">
-        <div class="profile-img">
-          <img src="foto gw .jpeg" alt="Muhammad Anfasa Umar" />
+        <div class="profile-img-wrap">
+          <img src="foto gw .jpeg" alt="Muhammad Anfasa Umar" loading="lazy" />
           <div class="status-indicator">
-          <span class="ping-wave"></span>OPEN TO INTERNSHIP
+            <span class="ping-wave" aria-hidden="true"></span>OPEN TO INTERNSHIP
           </div>
         </div>
         <div class="profile-info">
@@ -95,321 +88,292 @@
               <span>Debat Rakyat Kampus 2025</span>
             </div>
             <div class="stat-box">
-              <strong>Kepala Departemen Kastrat</strong>
-              <span>Badan Eksekutif Mahasiswa STT-NF 2026</span>
+              <strong>Kepala Dept. Kastrat</strong>
+              <span>BEM STT-NF 2026</span>
             </div>
             <div class="stat-box">
-              <strong>Intern-IT Support</strong>
-              <span>Ex-PT.PLN Persero Pusdiklat Museum Listrik</span>
+              <strong>Intern — IT Support</strong>
+              <span>PT. PLN Persero Pusdiklat Museum Listrik</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="expertise" class="skills-section reveal-init" style="padding-left: 100px; padding-right: 100px; padding-top: 100px;">
+  <!-- Core Skills Section -->
+  <section id="expertise" class="skills-section section-pad reveal-init">
+    <div class="container">
       <h2 class="section-heading">Core Expertise Stack</h2>
-      <div class="topology-grid">
+      <div class="card-grid">
         <div class="node">
-          <i class="fas fa-tower-broadcast"></i>
+          <i class="fas fa-tower-broadcast" aria-hidden="true"></i>
           <h4>Network Installation & Maintenance</h4>
           <p>Ahli dalam perancangan, instalasi, dan perawatan jaringan internet (Indoor & Outdoor) dengan stabilitas tinggi.</p>
         </div>
         <div class="node">
-          <i class="fas fa-code"></i>
+          <i class="fas fa-code" aria-hidden="true"></i>
           <h4>Frontend Engineering & UI/UX</h4>
           <p>Membangun antarmuka web yang modern dan responsif, berorientasi pada kebutuhan klien untuk pengalaman pengguna yang optimal.</p>
         </div>
         <div class="node">
-          <i class="fas fa-tools"></i>
+          <i class="fas fa-tools" aria-hidden="true"></i>
           <h4>Hardware Specialist & Repair</h4>
           <p>Layanan teknis profesional untuk perbaikan dan pemeliharaan Laptop, PC, Smartphone, hingga perangkat Printer.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Soft Skills Section -->
-    <section id="soft-skills" class="soft-skills-section reveal-init">
+  <!-- Soft Skills Section -->
+  <section id="soft-skills" class="soft-skills-section section-pad reveal-init">
+    <div class="container">
       <h2 class="section-heading">Professional Soft Skills</h2>
-      <div class="soft-skills-container">
+      <div class="card-grid">
         <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
+          <div class="skill-icon"><i class="fas fa-users-cog" aria-hidden="true"></i></div>
           <h3>Strategic Leadership</h3>
           <p>Berpengalaman memimpin tim dalam organisasi kampus (BEM) dan manajemen proyek teknologi sebagai CTO.</p>
         </div>
         <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-comments"></i></div>
+          <div class="skill-icon"><i class="fas fa-comments" aria-hidden="true"></i></div>
           <h3>Client-Centric Communication</h3>
-          <p>Mampu menerjemahkan kebutuhan teknis klien menjadi solusi visual (UI/UX) yang fungsional dan memuaskan.</p>
+          <p>Mampu menerjemahkan kebutuhan teknis klien menjadi solusi visual yang fungsional dan memuaskan.</p>
         </div>
         <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="skill-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
           <h3>Analytical Problem Solving</h3>
           <p>Analisis cepat dan tepat dalam menangani troubleshoot hardware maupun investigasi keamanan siber.</p>
         </div>
         <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-tasks"></i></div>
+          <div class="skill-icon"><i class="fas fa-tasks" aria-hidden="true"></i></div>
           <h3>Project Management</h3>
           <p>Terbiasa mengelola timeline acara besar dan memastikan delivery proyek tepat waktu.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects container reveal-init" style="padding-left: 80px; padding-right: 80px;">
+  <!-- Projects Section -->
+  <section id="projects" class="projects section-pad reveal-init">
+    <div class="container">
       <h2 class="section-heading">Featured Deployments</h2>
       <div class="project-grid">
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="EdLink.png" alt="EdLink Integration System" />
-            <div class="project-overlay">
-              <div class="project-tags">
-                <span>Frontend</span><span>Figma</span><span>Web Developer</span>
-              </div>
+        <article class="project-card">
+          <div class="project-img-wrap">
+            <img src="EdLink.png" alt="EdLink Integration System" loading="lazy" />
+            <div class="project-overlay" aria-hidden="true">
+              <div class="project-tags"><span>Frontend</span><span>Figma</span><span>Web Dev</span></div>
             </div>
           </div>
           <div class="project-content">
             <h3>EdLink Management System</h3>
             <p>Optimasi dan integrasi platform pembelajaran digital untuk efisiensi manajemen data akademik.</p>
-            <a href="#" class="view-detail">View Details <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="view-detail">View Details <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="MLEB.png" alt="Museum Listrik Energi Baru" />
-            <div class="project-overlay">
-              <div class="project-tags">
-                <span>Tailwind CSS</span><span>JavaScript</span><span>Responsive</span>
-              </div>
+        </article>
+        <article class="project-card">
+          <div class="project-img-wrap">
+            <img src="MLEB.png" alt="Museum Listrik Energi Baru" loading="lazy" />
+            <div class="project-overlay" aria-hidden="true">
+              <div class="project-tags"><span>Tailwind CSS</span><span>JavaScript</span><span>Responsive</span></div>
             </div>
           </div>
           <div class="project-content">
             <h3>Museum Listrik & Energi Baru</h3>
             <p>Pengembangan antarmuka website informatif untuk PT PLN menggunakan Tailwind CSS.</p>
-            <a href="#" class="view-detail">View Live Site <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="view-detail">View Live Site <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="Autopsy.png" alt="Digital Forensics" />
-            <div class="project-overlay">
-              <div class="project-tags">
-                <span>Forensics</span><span>Autopsy</span><span>Investigation</span>
-              </div>
+        </article>
+        <article class="project-card">
+          <div class="project-img-wrap">
+            <img src="Autopsy.png" alt="Digital Forensics Investigation" loading="lazy" />
+            <div class="project-overlay" aria-hidden="true">
+              <div class="project-tags"><span>Forensics</span><span>Autopsy</span><span>Investigation</span></div>
             </div>
           </div>
           <div class="project-content">
             <h3>Digital Forensics Investigation</h3>
             <p>Analisis bukti digital menggunakan FTK Imager dan Autopsy untuk investigasi file terhapus.</p>
-            <a href="#" class="view-detail">View Report <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="view-detail">View Report <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="VKJ.png" alt="Network Security Virtualization" />
-            <div class="project-overlay">
-              <div class="project-tags">
-                <span>MikroTik CHR</span><span>Ubuntu Server</span><span>Virtualization</span>
-              </div>
+        </article>
+        <article class="project-card">
+          <div class="project-img-wrap">
+            <img src="VKJ.png" alt="Network Security Virtualization" loading="lazy" />
+            <div class="project-overlay" aria-hidden="true">
+              <div class="project-tags"><span>MikroTik CHR</span><span>Ubuntu Server</span><span>Virtualization</span></div>
             </div>
           </div>
           <div class="project-content">
             <h3>Network Security Virtualization</h3>
             <p>Simulasi jaringan aman menggunakan VirtualBox dan MikroTik CHR untuk pengujian firewall.</p>
-            <a href="#" class="view-detail">View Topology <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="view-detail">View Topology <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="jaktrans.png" alt="Network Security Virtualization" />
-            <div class="project-overlay">
-              <div class="project-tags">
-               <span>Frontend</span><span>Figma</span><span>Web Developer</span>
-              </div>
+        </article>
+        <article class="project-card">
+          <div class="project-img-wrap">
+            <img src="jaktrans.png" alt="Project Jakarta Trans" loading="lazy" />
+            <div class="project-overlay" aria-hidden="true">
+              <div class="project-tags"><span>Frontend</span><span>Figma</span><span>Web Dev</span></div>
             </div>
           </div>
           <div class="project-content">
             <h3>Project Jakarta Trans (JakTrans)</h3>
-            <p>Rancang bangun aplikasi berbasis web untuk digitalisasi layanan transportasi umum guna mempermudah aksesibilitas masyarakat Jakarta.</p>
-            <a href="#" class="view-detail">View Topology <i class="fas fa-arrow-right"></i></a>
+            <p>Rancang bangun aplikasi berbasis web untuk digitalisasi layanan transportasi umum Jakarta.</p>
+            <a href="#" class="view-detail">View Project <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
-        </div>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Certificates Section -->
-    <section id="certifications" class="certs container reveal-init">
+  <!-- Certificates Section -->
+  <section id="certifications" class="certs section-pad reveal-init">
+    <div class="container">
       <h2 class="section-heading">Professional Credentials</h2>
-      
-      <div class="cert-filter">
+      <div class="cert-filter" role="group" aria-label="Filter certificates">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="Sertifikat">Sertifikat</button>
         <button class="filter-btn" data-filter="Sertifikasi">Sertifikasi</button>
       </div>
-
       <div class="cert-grid">
-        <div class="cert-card" data-category="Sertifikat" data-modal='["MUHAMMAD ANFASA UMAR (1) (1).png"]'>
-          <div class="cert-img-container">
-            <img src="MUHAMMAD ANFASA UMAR (1) (1).png" alt="Project Officer DERAS" />
-          </div>
+        <article class="cert-card" data-category="Sertifikat" data-img="MUHAMMAD ANFASA UMAR (1) (1).png" data-caption="Project Officer DERAS 2025">
+          <div class="cert-img-wrap"><img src="MUHAMMAD ANFASA UMAR (1) (1).png" alt="Project Officer DERAS" loading="lazy" /></div>
           <div class="cert-info">
             <h4>Project Officer DERAS 2025</h4>
             <span>BEM STT Terpadu Nurul Fikri</span>
-            <p>Bertanggung jawab penuh dalam memimpin manajemen proyek, koordinasi antar divisi, dan memastikan keberhasilan pelaksanaan debat publik skala kampus.</p>
+            <p>Bertanggung jawab penuh dalam memimpin manajemen proyek dan koordinasi antar divisi debat publik skala kampus.</p>
           </div>
-        </div>
-        <!-- Tambahkan cert-card lainnya dengan pola yang sama -->
-        <div class="cert-card" data-category="Sertifikasi" data-modal='["Sertifikat.K3L_page-0001.jpg"]'>
-          <div class="cert-img-container">
-            <img src="Sertifikat.K3L_page-0001.jpg" alt="K3L Certificate" />
-          </div>
+        </article>
+        <article class="cert-card" data-category="Sertifikasi" data-img="Sertifikat.K3L_page-0001.jpg" data-caption="Kesehatan & Keselamatan Kerja">
+          <div class="cert-img-wrap"><img src="Sertifikat.K3L_page-0001.jpg" alt="K3L Certificate" loading="lazy" /></div>
           <div class="cert-info">
             <h4>Kesehatan & Keselamatan Kerja</h4>
             <span>GeoSafety Indonesia</span>
-            <p>Sertifikat kompetensi yang memvalidasi keahlian dalam menjalankan prosedur K3L sesuai dengan regulasi dan standar keamanan kerja nasional.</p>
+            <p>Sertifikat kompetensi K3L sesuai regulasi dan standar keamanan kerja nasional.</p>
           </div>
-        </div>
-         <!-- Tambahkan cert-card lainnya dengan pola yang sama -->
-        <div class="cert-card" data-category="Sertifikat" data-modal='["Anfasa Umar.png"]'>
-          <div class="cert-img-container">
-            <img src="Anfasa Umar.png" alt="Sertifikat Penghargaan Kastrat" />
-          </div>
+        </article>
+        <article class="cert-card" data-category="Sertifikat" data-img="Anfasa Umar.png" data-caption="Pengabdian Mahasiswa 2025">
+          <div class="cert-img-wrap"><img src="Anfasa Umar.png" alt="Sertifikat Penghargaan Kastrat" loading="lazy" /></div>
           <div class="cert-info">
             <h4>Pengabdian Mahasiswa 2025</h4>
-            <span>BEM STT TErpadu Nurul Fikri</span>
-            <p>Penghargaan atas dedikasi dalam membangun sinergi bersama masyarakat melalui aksi pengabdian yang memberikan dampak positif berkelanjutan.</p>
-          </div>
-        </div>
-         <!-- Tambahkan cert-card lainnya dengan pola yang sama -->
-        <div class="cert-card" data-category="Sertifikat" data-modal='["Juara 3 Esai - M. Anfasa.png"]'>
-          <div class="cert-img-container">
-            <img src="Juara 3 Esai - M. Anfasa.png" alt="Certificate" />
-          </div>
-          <div class="cert-info">
-            <h4>Juara 3 Lomba Menulis </h4>
-            <span>EHA Institute</span>
-            <p>Penghargaan atas gagasan kreatif dalam menganalisis tantangan dan solusi gaya hidup serta pola makan sehat bagi Generasi Z.</p>
-          </div>
-        </div>
-         <!-- Tambahkan cert-card lainnya dengan pola yang sama -->
-        <div class="cert-card" data-category="Sertifikat" data-modal='["Sertifikat_magang.jpg"]'>
-          <div class="cert-img-container">
-            <img src="Sertifikat_magang.jpg" alt="K3L Certificate" />
-          </div>
-          <div class="cert-info">
-            <h4>Internship In PT.PLN Persero Pusdiklat</h4>
-            <span>PT.PLN Persero Pusdiklat Museum Listrik dan Energi Baru</span>
-            <p>Berpartisipasi dalam pengembangan antarmuka web dan pemeliharaan infrastruktur IT untuk mendukung operasional museum.</p>
-          </div>
-        </div>
-        <div class="cert-card" data-category="Sertifikat" data-modal='["UMAR.png"]'>
-          <div class="cert-img-container">
-            <img src="UMAR.png" alt="Project Officer DERAS" />
-          </div>
-          <div class="cert-info">
-            <h4>Panitia Pelantikan Kepala Unit Kegiatan Mahasiswa</h4>
             <span>BEM STT Terpadu Nurul Fikri</span>
-           <p>Bertanggung jawab dalam mengoordinasi teknis pelaksanaan prosesi pelantikan formal bagi seluruh pimpinan Unit Kegiatan Mahasiswa (UKM).</p>
+            <p>Penghargaan atas dedikasi membangun sinergi dengan masyarakat melalui aksi pengabdian berkelanjutan.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Floating CV Button -->
-    <div class="floating-cv">
-      <a href="cv.jpg" download="Anfasa-Umar-CV.pdf" class="cv-btn">
-        <i class="fas fa-file-download"></i>
-        <span>Download CV</span>
-      </a>
-    </div>
-
-    
-    <!-- Contact Section -->
-<section id="contact" class="contact-section container reveal-init">
-  <div class="contact-content">
-    <div class="contact-info">
-      <h3 class="contact-title">Let's Connect</h3>
-      <div class="contact-details">
-        <a href="mailto:anfasaumar01@gmail.com" class="contact-item" data-type="email">
-          <i class="fas fa-envelope"></i>
-          <span>anfasaumar01@gmail.com</span>
-        </a>
-        <a href="https://linkedin.com/in/anfasaumar" class="contact-item" data-type="linkedin" target="_blank" rel="noopener">
-          <i class="fab fa-linkedin-in"></i>
-          <span>linkedin.com/in/anfasaumar</span>
-        </a>
-        <a href="#" class="contact-item" data-type="location">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Depok, Indonesia</span>
-        </a>
+        </article>
+        <article class="cert-card" data-category="Sertifikat" data-img="Juara 3 Esai - M. Anfasa.png" data-caption="Juara 3 Lomba Menulis">
+          <div class="cert-img-wrap"><img src="Juara 3 Esai - M. Anfasa.png" alt="Juara 3 Lomba Menulis" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Juara 3 Lomba Menulis</h4>
+            <span>EHA Institute</span>
+            <p>Penghargaan atas gagasan kreatif menganalisis gaya hidup dan pola makan sehat bagi Generasi Z.</p>
+          </div>
+        </article>
+        <article class="cert-card" data-category="Sertifikat" data-img="Sertifikat_magang.jpg" data-caption="Internship PT. PLN Persero">
+          <div class="cert-img-wrap"><img src="Sertifikat_magang.jpg" alt="Sertifikat Magang" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Internship — PT. PLN Persero Pusdiklat</h4>
+            <span>Museum Listrik dan Energi Baru</span>
+            <p>Pengembangan antarmuka web dan pemeliharaan infrastruktur IT untuk operasional museum.</p>
+          </div>
+        </article>
+        <article class="cert-card" data-category="Sertifikat" data-img="UMAR.png" data-caption="Panitia Pelantikan UKM">
+          <div class="cert-img-wrap"><img src="UMAR.png" alt="Sertifikat UKM" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Panitia Pelantikan Kepala UKM</h4>
+            <span>BEM STT Terpadu Nurul Fikri</span>
+            <p>Koordinasi teknis pelaksanaan prosesi pelantikan formal seluruh pimpinan Unit Kegiatan Mahasiswa.</p>
+          </div>
+        </article>
       </div>
     </div>
-    
-    <form action="https://formspree.io/f/mrejredn" method="POST" class="contact-form">
-      <div class="form-field">
-        <input type="text" name="name" placeholder="Your Name" required>
-      </div>
-      <div class="form-field">
-        <input type="email" name="email" placeholder="Your Email" required>
-      </div>
-      <div class="form-field">
-        <textarea name="message" placeholder="Your Message..." rows="4" required></textarea>
-      </div>
-      <button type="submit" class="form-submit">
-        <span>Send Message</span>
-        <i class="fas fa-paper-plane"></i>
-      </button>
-    </form>
-  </div>
-</section>
+  </section>
 
-    <!-- Certificate Modal -->
-    <div id="certModal" class="modal">
-      <span class="close-modal">&times;</span>
-      <img class="modal-content" id="certModalImg" />
-      <div id="certCaption" class="modal-caption"></div>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section section-pad reveal-init">
+    <div class="container">
+      <h2 class="section-heading">Let's Connect</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">Tertarik bekerja sama atau ada pertanyaan? Jangan ragu untuk menghubungi saya.</p>
+          <div class="contact-details">
+            <a href="mailto:anfasaumar01@gmail.com" class="contact-item">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>anfasaumar01@gmail.com</span>
+            </a>
+            <a href="https://linkedin.com/in/anfasaumar" class="contact-item" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              <span>linkedin.com/in/anfasaumar</span>
+            </a>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>Depok, Indonesia</span>
+            </div>
+          </div>
+        </div>
+        <form action="https://formspree.io/f/mrejredn" method="POST" class="contact-form" novalidate>
+          <div class="form-field">
+            <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
+          </div>
+          <div class="form-field">
+            <textarea name="message" placeholder="Your Message..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-      <div class="footer-container">
-        <div class="footer-brand">
-          <div class="logo">ANFASA<span>UMAR</span></div>
-          <p>Architecting secure and resilient network infrastructures. Bridging connectivity with precision.</p>
-          <div class="system-uptime">
-            <span class="status-dot"></span>System Uptime: 99.9%
-          </div>
-        </div>
-        <div class="footer-links-grid">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Profile</a></li>
-            <li><a href="#expertise">Skills</a></li>
-            <li><a href="#projects">Deployments</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact Protocol</h4>
-          <p><i class="fas fa-envelope"></i> anfasaumar01@gmail.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> Depok, West Java, Indonesia</p>
-          <div class="footer-socials">
-            <a href="https://linkedin.com/in/anfasaumar" class="s-link linkedin"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/anfasaumar" class="s-link github"><i class="fab fa-github"></i></a>
-            <a href="https://instagram.com/anfsumr" class="s-link instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/6289637434050" class="s-link whatsapp"><i class="fab fa-whatsapp"></i></a>
-          </div>
+  <!-- Floating CV Button -->
+  <a href="cv.jpg" download="Anfasa-Umar-CV.pdf" class="floating-cv" aria-label="Download CV">
+    <i class="fas fa-file-download" aria-hidden="true"></i>
+    <span>Download CV</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <div class="logo">ANFASA<span>UMAR</span></div>
+        <p>Architecting secure and resilient network infrastructures. Bridging connectivity with precision.</p>
+        <div class="system-uptime">
+          <span class="status-dot" aria-hidden="true"></span>System Uptime: 99.9%
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="footer-container">
-          <p>&copy; 2026 Muhammad Anfasa Umar. All Rights Reserved.</p>
-          <p class="tech-stack-info">Built with HTML5, CSS3, & Vanilla JS</p>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Profile</a></li>
+          <li><a href="#expertise">Skills</a></li>
+          <li><a href="#projects">Deployments</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>Contact Protocol</h4>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> anfasaumar01@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Depok, West Java, Indonesia</p>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/anfasaumar" class="s-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/anfasaumar" class="s-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/anfsumr" class="s-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/6289637434050" class="s-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Muhammad Anfasa Umar. All Rights Reserved.</p>
+      <p class="tech-stack-info">Built with HTML5, CSS3 &amp; Vanilla JS</p>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>

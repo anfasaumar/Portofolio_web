@@ -1,275 +1,208 @@
 /**
- * Muhammad Anfasa Umar - Portfolio Script
- * All features integrated: Theme Toggle, Typewriter, Modals, Animations, Mobile Menu
+ * Muhammad Anfasa Umar — Portfolio Script
+ * Optimized: modular, efficient, no redundancy
  */
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all features
-    initThemeToggle();
-    initTypewriter();
-    initMobileMenu();
-    initScrollAnimations();
-    initScrollSpy();
-    initModals();
-    initFilters();
-    initNavbarScrollEffect();
-    
-    console.log('%c🚀 Portfolio System Online | Anfasa Umar', 
-        'color: #0070f3; font-size: 16px; font-weight: bold;');
-    console.log('%c📊 All systems operational - Network latency: 0ms', 
-        'color: #00ff88; font-size: 12px;');
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initTypewriter();
+  initMobileMenu();
+  initScrollBehavior();
+  initScrollSpy();
+  initReveal();
+  initModal();
+  initCertFilter();
+  initFormSubmit();
+
+  console.log('%c🚀 Portfolio Online | Anfasa Umar', 'color:#0070f3;font-size:15px;font-weight:bold;');
 });
 
-// 1. DARK/LIGHT THEME TOGGLE
-function initThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-    const body = document.body;
-    
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    body.setAttribute('data-theme', savedTheme);
-    updateThemeIcons(savedTheme);
-    
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcons(newTheme);
-    });
-    
-    function updateThemeIcons(theme) {
-        if (theme === 'dark') {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        } else {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        }
-    }
+/* ── 1. THEME TOGGLE ─────────────────────────────────── */
+function initTheme() {
+  const btn      = document.getElementById('themeToggle');
+  const sunIcon  = document.getElementById('sunIcon');
+  const moonIcon = document.getElementById('moonIcon');
+  const html     = document.documentElement;
+
+  const saved = localStorage.getItem('theme') || 'dark';
+  applyTheme(saved);
+
+  btn.addEventListener('click', () => {
+    const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+
+  function applyTheme(t) {
+    html.dataset.theme = t;
+    sunIcon.style.display  = t === 'dark' ? 'block' : 'none';
+    moonIcon.style.display = t === 'dark' ? 'none'  : 'block';
+  }
 }
 
-// 2. TYPEWRITER EFFECT
+/* ── 2. TYPEWRITER ───────────────────────────────────── */
 function initTypewriter() {
-    const typewriter = document.getElementById('typewriter');
-    const phrases = [
-        'Strategic Technology.',
-        'Cyber Security.',
-        'Full-Stack Systems.',
-        'Cloud Infrastructure.'
-    ];
-    
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    
-    function type() {
-        const currentPhrase = phrases[phraseIndex];
-        
-        if (isDeleting) {
-            typewriter.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typewriter.textContent = currentPhrase.substring(0, charIndex + 1);
-            charIndex++;
-        }
-        
-        let typeSpeed = isDeleting ? 50 : 100;
-        if (!isDeleting && charIndex === currentPhrase.length) {
-            typeSpeed = 2000;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            typeSpeed = 500;
-        }
-        
-        setTimeout(type, typeSpeed);
-    }
-    
-    type();
+  const el      = document.getElementById('typewriter');
+  const phrases = ['Strategic Technology.', 'Cyber Security.', 'Full-Stack Systems.', 'Cloud Infrastructure.'];
+  let pi = 0, ci = 0, deleting = false;
+
+  (function loop() {
+    const phrase = phrases[pi];
+    el.textContent = phrase.substring(0, deleting ? --ci : ++ci);
+
+    let delay = deleting ? 45 : 95;
+    if (!deleting && ci === phrase.length)      { delay = 2000; deleting = true; }
+    else if (deleting && ci === 0)              { deleting = false; pi = (pi + 1) % phrases.length; delay = 500; }
+
+    setTimeout(loop, delay);
+  })();
 }
 
-// 3. MOBILE MENU
+/* ── 3. MOBILE MENU ──────────────────────────────────── */
 function initMobileMenu() {
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-    
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
-    
-    // Close menu on link click
-    document.querySelectorAll('.nav-item[href^="#"]').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-        });
-    });
-}
+  const toggle = document.getElementById('mobile-menu');
+  const nav    = document.getElementById('nav-links');
 
-// 4. SCROLL ANIMATIONS
-function initScrollAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    document.querySelectorAll('.reveal-init').forEach(el => {
-        observer.observe(el);
-    });
-}
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('active');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
 
-// 5. NAVBAR SCROLL SPY
-function initScrollSpy() {
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-item[href^="#"]');
-    
-    window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 100) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href') === `#${current}`) {
-                item.classList.add('active');
-            }
-        });
-    });
-}
+  // Close on link click
+  nav.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
 
-// 6. MODALS (Image Preview & Certificate)
-function initModals() {
-    // Universal Image Preview
-    document.addEventListener('click', (e) => {
-        if (e.target.tagName === 'IMG' && !e.target.closest('.modal')) {
-            const modal = document.getElementById('previewModal');
-            const previewImg = document.getElementById('previewImage');
-            const previewCaption = document.getElementById('previewCaption');
-            
-            previewImg.src = e.target.src;
-            previewCaption.textContent = e.target.alt || 'Project Preview';
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    });
-    
-    // Close modals
-    document.querySelectorAll('.close-preview, .close-modal').forEach(btn => {
-        btn.addEventListener('click', closeAllModals);
-    });
-    
-    document.addEventListener('click', (e) => {
-        const modals = document.querySelectorAll('.modal-preview.active, .modal.active');
-        modals.forEach(modal => {
-            if (e.target === modal) {
-                closeAllModals();
-            }
-        });
-    });
-    
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeAllModals();
-        }
-    });
-    
-    function closeAllModals() {
-        document.querySelectorAll('.modal.active, .modal-preview.active').forEach(modal => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+      closeMenu();
     }
+  });
+
+  function closeMenu() {
+    nav.classList.remove('active');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
 }
 
-// 7. CERTIFICATE FILTER
-function initFilters() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const certCards = document.querySelectorAll('.cert-card');
-    
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.dataset.filter;
-            
-            // Update active button
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            // Filter cards
-            certCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.style.display = 'block';
-                    card.style.opacity = '1';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-    
-    // Certificate modal functionality
-    document.querySelectorAll('.cert-card[data-modal]').forEach(card => {
-        card.addEventListener('click', () => {
-            const modalData = JSON.parse(card.dataset.modal);
-            const certModal = document.getElementById('certModal');
-            const certImg = document.getElementById('certModalImg');
-            const certCaption = document.getElementById('certCaption');
-            
-            certImg.src = modalData[0];
-            certCaption.textContent = modalData[1];
-            certModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    });
-}
+/* ── 4. SCROLL — navbar shrink + smooth anchors ──────── */
+function initScrollBehavior() {
+  const navbar = document.getElementById('navbar');
 
-// 8. NAVBAR SCROLL EFFECT
-function initNavbarScrollEffect() {
-    const nav = document.querySelector('nav');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.style.background = 'rgba(5,5,5,0.98)';
-            nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
-            nav.style.padding = '1rem 5%';
-        } else {
-            nav.style.background = 'rgba(5,5,5,0.92)';
-            nav.style.boxShadow = 'none';
-            nav.style.padding = '1.5rem 5%';
-        }
-    });
-}
+  const onScroll = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  // Smooth scroll for all in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
-});
+  });
+}
 
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-  const btn = this.querySelector('.form-submit');
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-});
+/* ── 5. SCROLL SPY ───────────────────────────────────── */
+function initScrollSpy() {
+  const sections = [...document.querySelectorAll('section[id]')];
+  const navItems = document.querySelectorAll('.nav-item[href^="#"]');
+
+  const update = () => {
+    let current = '';
+    sections.forEach(s => {
+      if (s.getBoundingClientRect().top <= 120) current = s.id;
+    });
+    navItems.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+    });
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+/* ── 6. INTERSECTION OBSERVER REVEAL ─────────────────── */
+function initReveal() {
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.reveal-init').forEach(el => obs.observe(el));
+}
+
+/* ── 7. MODAL (image preview) ────────────────────────── */
+function initModal() {
+  const modal   = document.getElementById('previewModal');
+  const img     = document.getElementById('previewImage');
+  const caption = document.getElementById('previewCaption');
+  const closeBtn = modal.querySelector('.close-modal');
+
+  // Open on cert-card click
+  document.querySelectorAll('.cert-card').forEach(card => {
+    card.addEventListener('click', () => open(card.dataset.img, card.dataset.caption || ''));
+  });
+
+  // Open on any content image click (not inside modal)
+  document.addEventListener('click', e => {
+    if (e.target.tagName === 'IMG' && !e.target.closest('.modal') && !e.target.closest('.cert-card')) {
+      open(e.target.src, e.target.alt || '');
+    }
+  });
+
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+  function open(src, cap) {
+    img.src = src;
+    caption.textContent = cap;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    // Clear src after animation
+    setTimeout(() => { img.src = ''; }, 300);
+  }
+}
+
+/* ── 8. CERTIFICATE FILTER ───────────────────────────── */
+function initCertFilter() {
+  const btns  = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.cert-card');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+}
+
+/* ── 9. FORM SUBMIT ──────────────────────────────────── */
+function initFormSubmit() {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', () => {
+    const btn = form.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  });
+}
