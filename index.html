@@ -48,19 +48,43 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero reveal-init">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="sub-title">Network Engineer & Frontend Engineer</span>
-      <h1>Innovating Through <span id="typewriter" aria-live="polite"></span><span class="cursor" aria-hidden="true">|</span></h1>
-      <p>Mengoptimalkan performa web dan keamanan infrastruktur melalui pendekatan Full-Stack yang scalable dan teruji.</p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View My Work</a>
-        <a href="#contact" class="btn-outline">Let's Talk</a>
+  <section id="home" class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+    <div class="hero-col hero-intro">
+      <h2>About Me</h2>
+      <p>Mahasiswa Teknik Informatika di <strong>STT Terpadu Nurul Fikri</strong> dengan spesialisasi sistem infrastruktur jaringan. Berpengalaman dalam mengelola aspek teknis dan strategis di organisasi serta proyek bisnis.</p>
+    </div>
+
+    <div class="hero-col hero-profile">
+      <div class="profile-raw" id="profile-container">
+        <img src="fotogw.png" alt="Muhammad Anfasa Umar" id="hero-img">
+        
+        <div class="image-dots">
+          <span class="dot active" onclick="changeImage(0)"></span>
+          <span class="dot" onclick="changeImage(1)"></span>
+        </div>
       </div>
     </div>
-  </section>
+
+    <div class="hero-col hero-jobdesk">
+      <div class="jobdesk-wrapper">
+        <span class="sub-title">Main Expertise</span>
+        <h1>Innovating Through <br>
+          <span id="typewriter" aria-live="polite"></span><span class="cursor" aria-hidden="true">|</span>
+        </h1>
+        
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-outline">Let's Talk</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Image Preview Modal -->
   <div id="previewModal" class="modal" role="dialog" aria-modal="true" aria-label="Image Preview">
@@ -70,39 +94,6 @@
       <p id="previewCaption" class="modal-caption"></p>
     </div>
   </div>
-
-  <!-- About Section -->
-  <section id="about" class="about section-pad reveal-init">
-    <div class="container">
-      <div class="profile-grid">
-        <div class="profile-img-wrap">
-          <img src="foto gw .jpeg" alt="Muhammad Anfasa Umar" loading="lazy" />
-          <div class="status-indicator">
-            <span class="ping-wave" aria-hidden="true"></span>OPEN TO INTERNSHIP
-          </div>
-        </div>
-        <div class="profile-info">
-          <h2>Muhammad Anfasa Umar</h2>
-          <h3>Network Engineer & Informatics Student</h3>
-          <p>Mahasiswa Teknik Informatika di <strong>STT Terpadu Nurul Fikri</strong> dengan spesialisasi sistem infrastruktur jaringan. Berpengalaman dalam mengelola aspek teknis dan strategis di organisasi serta proyek bisnis.</p>
-          <div class="stats-row">
-            <div class="stat-box">
-              <strong>Project Officer</strong>
-              <span>Debat Rakyat Kampus 2025</span>
-            </div>
-            <div class="stat-box">
-              <strong>Kepala Dept. Kastrat</strong>
-              <span>BEM STT-NF 2026</span>
-            </div>
-            <div class="stat-box">
-              <strong>Intern — IT Support</strong>
-              <span>PT. PLN Persero Pusdiklat Museum Listrik</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Core Skills Section -->
   <section id="expertise" class="skills-section section-pad reveal-init">

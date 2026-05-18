@@ -280,98 +280,180 @@ header {
 .menu-toggle.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* === Hero Section === */
+/* === Hero Section === */
 .hero {
-  min-height: 100svh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  position: relative;
-  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.45)),
-              url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80')
-              center/cover no-repeat;
   padding-top: var(--nav-h);
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5));
-  pointer-events: none;
+  background: var(--bg-base);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--trans);
 }
 
 .hero-content {
-  position: relative;
-  max-width: 780px;
-  padding-inline: var(--sp-md);
-  padding-block: var(--sp-xl);
+  display: grid;
+  /* Kiri: Intro, Tengah: Profile, Kanan: Jobdesk */
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: var(--sp-md);
+  align-items: center; /* Menggunakan center agar teks samping sejajar vertikal dengan foto */
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--sp-lg);
+  z-index: 2;
 }
 
-.sub-title {
-  display: block;
+/* --- Styling Kolom --- */
+.hero-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-intro {
+  text-align: right;
+}
+
+.hero-intro h2 {
+  color: var(--clr-primary);
+  font-size: 2rem;
+  margin-bottom: var(--sp-sm);
+}
+
+.hero-intro p {
+  color: var(--txt-secondary);
+}
+
+.hero-jobdesk {
+  text-align: left;
+}
+
+.hero-jobdesk .sub-title {
   color: var(--clr-accent);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(0.7rem, 2vw, 0.9rem);
-  letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: var(--sp-sm);
-}
-
-.hero-content h1 {
-  font-size: clamp(2rem, 6vw, 3.75rem);
+  letter-spacing: 2px;
   font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: var(--sp-sm);
-  color: #fff;
+  font-size: 0.85rem;
 }
 
-#typewriter { color: var(--clr-accent); }
-
-.cursor {
-  display: inline-block;
-  color: var(--clr-accent);
-  animation: blink 0.75s step-end infinite;
-  margin-left: 1px;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
-.hero-content p {
-  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-  color: rgba(255,255,255,0.85);
-  margin-bottom: var(--sp-lg);
-  max-width: 560px;
-  margin-inline: auto;
+.hero-jobdesk h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: var(--sp-xs) 0 var(--sp-md);
 }
 
+/* --- Foto & Container Interaktif --- */
+.hero-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-raw {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  /* Masking memudar di bawah agar badan menyatu halus */
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+#hero-img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  filter: drop-shadow(0 0 30px var(--input-focus));
+}
+
+/* Class bantuan saat gambar berganti via JS */
+.img-fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* --- Image Dots Navigation --- */
+.image-dots {
+  display: flex;
+  gap: 12px;
+  margin-top: var(--sp-md);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--txt-secondary);
+  cursor: pointer;
+  opacity: 0.3;
+  transition: all var(--trans);
+}
+
+.dot.active {
+  background: var(--clr-primary);
+  opacity: 1;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px var(--clr-primary);
+}
+
+/* --- Tombol --- */
 .hero-btns {
   display: flex;
   gap: var(--sp-sm);
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
-.btn-primary, .btn-outline {
-  padding: 0.85rem 2rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: var(--radius);
-  transition: var(--trans);
-}
 .btn-primary {
   background: var(--clr-primary);
-  color: #fff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  transition: transform var(--trans), background var(--trans);
 }
+
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0,112,243,0.45);
+  filter: brightness(1.1);
 }
+
 .btn-outline {
-  border: 2px solid rgba(255,255,255,0.7);
-  color: #fff;
+  border: 1px solid var(--border);
+  color: var(--txt-primary);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  transition: background var(--trans);
 }
+
 .btn-outline:hover {
-  background: rgba(255,255,255,0.15);
-  border-color: #fff;
+  background: var(--input-bg);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+    gap: var(--sp-xl);
+  }
+
+  .hero-intro, .hero-jobdesk {
+    text-align: center;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  /* Urutan di Mobile: Foto -> Jobdesk -> Intro */
+  .hero-profile { order: 1; }
+  .hero-jobdesk { order: 2; }
+  .hero-intro { order: 3; }
+
+  .profile-raw {
+    max-width: 320px;
+  }
 }
 
 /* === About === */
